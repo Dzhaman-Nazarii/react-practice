@@ -6,7 +6,7 @@ import { Study } from "../study/Study";
 import { Tabs } from "../tabs/Tabs";
 
 export const App = () => {
-	const [tab, setTab] = useState("main");
+	const [tab, setTab] = useState("feedback");
 
 	return (
 		<>
