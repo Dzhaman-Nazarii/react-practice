@@ -1,11 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Header = () => {
 	const [now, setNow] = useState(new Date());
 
-	setInterval(() => {
-		setNow(new Date());
-	}, 1000);
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setNow(new Date());
+		}, 1000);
+
+		return () => {
+			clearInterval(interval);
+		};
+	}, []);
 
 	return (
 		<header>
